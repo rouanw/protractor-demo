@@ -1,6 +1,7 @@
 'use strict';
 
 var helpers = require('./helpers.js');
+var googleHomePage = require('./pages/googleHomePage.js');
 
 describe('protractor github page', function() {
 
@@ -9,9 +10,9 @@ describe('protractor github page', function() {
   });
 
   it('should be the first google search result', function() {
-    browser.get('http://www.google.co.za');
-    element(by.id('gbqfq')).sendKeys('protractor github');
-    element(by.id('gbqfb')).click();
+    googleHomePage.load();
+    googleHomePage.enterSearchTerm('protractor github');
+    googleHomePage.clickSearchButton();
     var firstResult = by.css('h3.r a');
     helpers.waitForElement(firstResult);
     element(firstResult).click();
