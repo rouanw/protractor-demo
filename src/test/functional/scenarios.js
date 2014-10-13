@@ -2,6 +2,7 @@
 
 var googleHomePage = require('./pages/googleHomePage.js');
 var googleResultsPage = require('./pages/googleResultsPage.js');
+var githubRepoPage = require('./pages/githubRepoPage.js');
 
 describe('protractor github page', function() {
 
@@ -14,7 +15,7 @@ describe('protractor github page', function() {
     googleHomePage.enterSearchTerm('protractor github');
     googleHomePage.clickSearchButton();
     googleResultsPage.clickFirstResult();
-    expect(element(by.css('.repository-description p')).getText()).toBe('E2E test framework for Angular apps');
+    expect(githubRepoPage.getDescription()).toBe('E2E test framework for Angular apps');
   });
 
 });
