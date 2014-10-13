@@ -1,7 +1,7 @@
 'use strict';
 
-var helpers = require('./helpers.js');
 var googleHomePage = require('./pages/googleHomePage.js');
+var googleResultsPage = require('./pages/googleResultsPage.js');
 
 describe('protractor github page', function() {
 
@@ -13,9 +13,7 @@ describe('protractor github page', function() {
     googleHomePage.load();
     googleHomePage.enterSearchTerm('protractor github');
     googleHomePage.clickSearchButton();
-    var firstResult = by.css('h3.r a');
-    helpers.waitForElement(firstResult);
-    element(firstResult).click();
+    googleResultsPage.clickFirstResult();
     expect(element(by.css('.repository-description p')).getText()).toBe('E2E test framework for Angular apps');
   });
 
