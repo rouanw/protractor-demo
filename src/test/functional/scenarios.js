@@ -1,5 +1,7 @@
 'use strict';
 
+var helpers = require('./helpers.js');
+
 describe('protractor github page', function() {
 
   beforeEach(function(){
@@ -10,10 +12,9 @@ describe('protractor github page', function() {
     browser.get('http://www.google.co.za');
     element(by.id('gbqfq')).sendKeys('protractor github');
     element(by.id('gbqfb')).click();
-    browser.wait(function () {
-      return browser.isElementPresent(by.css('h3.r a'))
-    }, 1000);
-    element(by.css('h3.r a')).click();
+    var firstResult = by.css('h3.r a');
+    helpers.waitForElement(firstResult);
+    element(firstResult).click();
     expect(element(by.css('.repository-description p')).getText()).toBe('E2E test framework for Angular apps');
   });
 
