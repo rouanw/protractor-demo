@@ -1,0 +1,13 @@
+{
+  "name": "functional-demo",
+  "version": "0.1.0",
+  "description": "a demo featuring protractor",
+  "devDependencies": {
+    "chromedriver": "~2.9",
+    "grunt": "~0.4.2",
+    "grunt-cli": "~0.1",
+    "grunt-protractor-runner": "1.1.0",
+    "protractor": "~1.2.0",
+    "selenium-server": "2.35.0"
+  }
+}
