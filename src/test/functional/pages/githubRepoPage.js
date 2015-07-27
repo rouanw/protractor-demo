@@ -1,6 +1,6 @@
 var githubRepoPage = function () {
     this.getDescription = function () {
-      return element(by.css('.repository-description p')).getText();
+      return element(by.css('.repository-description')).getText();
     };
 };
 
