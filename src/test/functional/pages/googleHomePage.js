@@ -4,11 +4,11 @@ var googleHomePage = function () {
     };
 
     this.enterSearchTerm = function (term) {
-      element(by.id('gbqfq')).sendKeys(term);
+      element(by.css('input[title="Search"]')).sendKeys(term);
     };
 
     this.clickSearchButton = function () {
-      element(by.id('gbqfb')).click();
+      element(by.css('button[value="Search"]')).click();
     };
 };
 
